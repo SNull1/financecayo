@@ -819,8 +819,8 @@
 
         const typedSelectedValue = loginSelect.value;
         loginSelect.innerHTML = `
-            <option value="premier_ministre">Le Premier Ministre (Régulation)</option>
-            <option value="gouverneur">Le Gouverneur (Auditeur Général)</option>
+            <option value="premier_ministre">Le Premier Ministre</option>
+            <option value="gouverneur">Le Gouverneur</option>
         `;
         Object.keys(entreprises).forEach(k => {
             let opt = document.createElement('option');
@@ -938,7 +938,7 @@
     document.getElementById('btn-submit-logout').onclick = deconnexion;
 
     function appliquerPermissions() {
-        const displayNames = { gouverneur: "Gouverneur (Auditeur)", premier_ministre: "Premier Ministre" };
+        const displayNames = { gouverneur: "Gouverneur", premier_ministre: "Premier Ministre" };
         document.getElementById('current-user-display').innerText = displayNames[currentUser] || entreprises[currentUser].label;
 
         const taxFields = document.querySelectorAll('.tax-field');
