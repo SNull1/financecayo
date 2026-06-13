@@ -625,13 +625,14 @@
                         <div class="stat-row"><span>Gains Bruts :</span><span class="green">${formatMoney(ent.gains)}</span></div>
                         <div class="stat-row"><span>Dépenses :</span><span class="red">${formatMoney(ent.depenses)}</span></div>
                         <div class="stat-row net"><span>Bénéfice Net :</span><span id="txt-net-${k}">${formatMoney(ent.total)}</span></div>
+                        // REMPLACE CE BLOC DANS TON CODE :
                         <div class="stat-row" style="margin-top: 5px; font-size:11px; color:var(--gov-text-muted);">
                             <span>Régime fiscal :</span>
                             <span>
-                                ${ent.exempt ? 'Exempté (0%)' : 'Taxable (' + (ent.taxRate * 100) + '%)'}
-                                ${currentUser === 'premier_ministre' && !ent.exempt ? `<button class="btn-edit-tax" data-company="${k}">Ajuster</button>` : ''}
+                            ${ent.exempt ? 'Exempté (0%)' : 'Taxable (' + (ent.taxRate * 100) + '%)'}
+                            ${currentUser === 'premier_ministre' ? `<button class="btn-edit-tax" data-company="${k}">Ajuster</button>` : ''}
                             </span>
-                        </div>
+                    </div>
                     </div>
                     <div class="tax-to-collect tax-field" id="tax-container-${k}">
                         <span>Impôt Restant : ${formatMoney(ent.tax)}</span>
